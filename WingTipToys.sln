@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WingTipToys", "WingTipToys\WingTipToys.csproj", "{652D1F5D-70B2-4B5A-AF28-214325FF578A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WingTipToysBackBoneView", "WingTipToysBackBoneView\WingTipToysBackBoneView.csproj", "{104024D4-0BD6-46FD-880A-662DBBA15BCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{652D1F5D-70B2-4B5A-AF28-214325FF578A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{652D1F5D-70B2-4B5A-AF28-214325FF578A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{652D1F5D-70B2-4B5A-AF28-214325FF578A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{652D1F5D-70B2-4B5A-AF28-214325FF578A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104024D4-0BD6-46FD-880A-662DBBA15BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104024D4-0BD6-46FD-880A-662DBBA15BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104024D4-0BD6-46FD-880A-662DBBA15BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104024D4-0BD6-46FD-880A-662DBBA15BCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
