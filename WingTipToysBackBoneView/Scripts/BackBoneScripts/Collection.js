@@ -7,9 +7,10 @@
      Collection.Category = Backbone.Collection.extend({
 
         initialize: function () {
+            console.log("initialization in collectin");
 
         },
-        url: 'http://localhost:4376/api/CategoryProduct/Get/'
+        url: "http://localhost:4376/api/CategoryProduct/GetCategoryList/"
     });
 
      WingTipToy.CollectionCategory = Collection;

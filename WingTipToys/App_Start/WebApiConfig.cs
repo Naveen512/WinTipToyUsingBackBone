@@ -22,6 +22,11 @@ namespace WingTipToys
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+              name: "ActionNameBasedRoute",
+              routeTemplate: "api/{controller}/{category}",
+               defaults: new { category = "all" }
+              );
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }

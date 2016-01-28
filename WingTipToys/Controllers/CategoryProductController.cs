@@ -17,7 +17,14 @@ namespace WingTipToys.Controllers
         [HttpGet]
         public HttpResponseMessage GetCategoryList()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, prodContext.Products.ToList(),System.Net.Http.Formatting.JsonMediaTypeFormatter.DefaultMediaType);
+            return Request.CreateResponse(HttpStatusCode.OK, prodContext.Categories.ToList(),System.Net.Http.Formatting.JsonMediaTypeFormatter.DefaultMediaType);
+        }
+
+        [HttpGet]
+        public HttpResponseMessage GetProductBasedOnCategoryId(int categoryID)
+        {
+            var productCollection = prodContext.Products.Where(_ => _.CategoryID == categoryID).ToList();
+            return Request.CreateResponse(HttpStatusCode.OK, productCollection, System.Net.Http.Formatting.JsonMediaTypeFormatter.DefaultMediaType);
         }
     }
 }
