@@ -15,7 +15,7 @@
         initialize: function () {
             console.log("initialize in Product Model");
         },
-        url:"http://localhost:4376/api/CategoryProduct/GetProductBasedOnCategoryId"
+        url:"http://localhost:4376/api/CategoryProduct/"
     });
 
     WingTipToy.ModelCategory = Model;

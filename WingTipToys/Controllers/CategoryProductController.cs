@@ -26,5 +26,12 @@ namespace WingTipToys.Controllers
             var productCollection = prodContext.Products.Where(_ => _.CategoryID == categoryID).ToList();
             return Request.CreateResponse(HttpStatusCode.OK, productCollection, System.Net.Http.Formatting.JsonMediaTypeFormatter.DefaultMediaType);
         }
+
+        public HttpResponseMessage GetSingleProduct(int productID)
+        {
+            var product = prodContext.Products.Where(_ => _.ProductID == productID).SingleOrDefault();
+
+            return Request.CreateResponse(HttpStatusCode.OK, product, System.Net.Http.Formatting.JsonMediaTypeFormatter.DefaultMediaType);
+        }
     }
 }

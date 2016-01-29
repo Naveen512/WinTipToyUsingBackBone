@@ -1,4 +1,19 @@
 ﻿
-<script>
+<script type="text/x-handlebars-template" id="productCardTemplate">
+    <div >
+        {{#each category}}
+        <div class="col-sm-6 col-md-4" style="height:300px;overflow:auto">
+            <div class="thumbnail">
+                <img id="imgID" src='http://localhost:5342//Catalog/Images/{{ImagePath}}' alt="..." data-val="{{ProductID}}">
+                <div class="caption">
+                    <h3>{{ProductName}}</h3>
+                    <h5>{{UnitPrice}}</h5>
+                    <p >{{Description}}</p>
+                    <!--<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>-->
 
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </script>
