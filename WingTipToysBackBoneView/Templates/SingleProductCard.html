@@ -3,16 +3,23 @@
         <!--{{#singleProduct}}-->
         <div class="media">
             <div class="media-left media-middle">
+                <h3>{{ProductName}}</h3>
                 <a href="#">
                     <img class="media-object" src="http://localhost:5342//Catalog/Images/{{ImagePath}}" alt="...">
                 </a>
             </div>
             <div class="media-body">
+                <br />
+                <br />
+                <br />
+                <br />
                 <h4 class="media-heading">Description</h4>
                 <p>{{Description}}</p>
                 <h class="media-heading">Price: </h><span>{{UnitPrice}}</span>
                 <br />
                 <h class="media-heading">Product Number: </h><span>{{ProductID}}</span>
+
+                <p><a id="addToCart" href="#" class="btn btn-primary" role="button">Add Cart</a></p>
             </div>
             <!--{{/singleProduct}}-->
         </div>

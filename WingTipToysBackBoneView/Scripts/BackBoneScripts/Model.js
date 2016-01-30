@@ -18,6 +18,10 @@
         url:"http://localhost:4376/api/CategoryProduct/"
     });
 
+    Model.ShopingCart = Backbone.Model.extend({
+
+    });
+
     WingTipToy.ModelCategory = Model;
 
 

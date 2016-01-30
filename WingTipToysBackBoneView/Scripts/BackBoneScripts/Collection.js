@@ -17,7 +17,10 @@
              console.log("initialization in Product Collection");
          },
          url: "http://localhost:4376/api/CategoryProduct/GetProductBasedOnCategoryId"
-     })
+     });
+     Collection.ShopingCart = Backbone.Collection.extend({
+         model: WingTipToy.ModelCategory.ShopingCart
+     });
 
      WingTipToy.CollectionCategory = Collection;
 

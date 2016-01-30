@@ -6,7 +6,7 @@ var WingTipToy = WingTipToy || {};
 (function (WingTipToy) {
 
     var View = {};
-
+    var shopID = 0;
     View.CategoryView = Backbone.View.extend({
         el: "body",
        
@@ -112,8 +112,74 @@ var WingTipToy = WingTipToy || {};
         
     });
 
+    View.ShopingCart = Backbone.View.extend({
+        el: "body",
+        //tagName:"div",
+        initialize: function () {
+            //this.el = $("#view2")
+            console.log("shoping cart initilizer");
+            this.collection =new WingTipToy.CollectionCategory.ShopingCart();
+        },
+        events:{
+            'click #addToCart': 'DisplayShopingChart',
+        },
+        DisplayShopingChart: function () {
+            var model;
+            var quan = this.collection.where({ Name: $('.media-left h3').text() }).length;
+            if (quan === 1) {
+                updateModel = this.collection.findWhere({ Name: $('.media-left h3').text() });
+                this.collection.remove(updateModel);
+                 model = new WingTipToy.ModelCategory.ShopingCart({
+                    ProductID: updateModel.attributes.ProductID,
+                    Name: updateModel.attributes.Name,
+                    Price: updateModel.attributes.Price,
+                    Quality: updateModel.attributes.Quality + 1,
+                    ItemTotal: (updateModel.attributes.Quality + 1) * updateModel.attributes.Price,
+
+                });
+                this.collection.add(model);
+            }
+            else {
+
+                //shopID = shopID + 1;
+                 model = new WingTipToy.ModelCategory.ShopingCart({
+                    ProductID:Number($('.media-body span')[1].innerHTML),
+                    Name: $('.media-left h3').text(),
+                    Price: $('.media-body span')[0].innerHTML,
+                    Quality: quan == 0 ? 1 : quan,
+                    ItemTotal: (quan == 0 ? 1 : quan) * Number($('.media-body span')[0].innerHTML),
+                });
+
+                this.collection.add(model);
+            }
+            //this.collection.comparator = "ID";
+            var templateName = "http://localhost:5342/Templates/ShopingCart.html";
+            $('#teplateParentHolder').html('');
+            //$.get(templateName, function (response) {
+
+            //    $('#teplateParentHolder').append(response);
+            //});
+            $.ajax({
+                type: 'GET',
+                url: templateName,
+                async: false,
+                'success': function (response) {
+                    $('#teplateParentHolder').append(response);
+                }
+            })
+            var source = $('#ShpotingCartTemplate').html();
+            var template = Handlebars.compile(source);
+            var outputHtml = template({ ShopingCart: this.collection.toJSON() });
+            $("#templateSuperParentHolder").html('');
+            $("#templateSuperParentHolder").append(outputHtml);
+            $("tr[data-val='" + model.attributes.ProductID + "']").addClass('success');
+        },
+        
+    });
+
     WingTipToy.ViewCategory = View;
 
     new WingTipToy.ViewCategory.ProductView();
+    new WingTipToy.ViewCategory.ShopingCart();
 
 })(WingTipToy)

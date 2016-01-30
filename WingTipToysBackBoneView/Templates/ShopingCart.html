@@ -1,0 +1,28 @@
+﻿<script type="text/x-handlebars-template" id="ShpotingCartTemplate">
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>PD No</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quality</th>
+                <th>ItemTotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each ShopingCart}}
+            <tr data-val="{{ProductID}}">
+                
+                <td>{{inc @index}}</td>
+                <td>{{ProductID}}</td>
+                <td>{{Name}}</td>
+                <td>{{Price}}</td>
+                <td>{{Quality}}</td>
+                <td>{{ItemTotal}}</td>
+            </tr>
+           {{/each}}
+        </tbody>
+    </table>
+</script>
